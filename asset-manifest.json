@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/mikepreis/7buttoncalculator/static/css/main.c4329f8a.chunk.css",
-    "main.js": "/mikepreis/7buttoncalculator/static/js/main.a66d954d.chunk.js",
-    "main.js.map": "/mikepreis/7buttoncalculator/static/js/main.a66d954d.chunk.js.map",
-    "runtime-main.js": "/mikepreis/7buttoncalculator/static/js/runtime-main.13f8788b.js",
-    "runtime-main.js.map": "/mikepreis/7buttoncalculator/static/js/runtime-main.13f8788b.js.map",
-    "static/js/2.424c09b7.chunk.js": "/mikepreis/7buttoncalculator/static/js/2.424c09b7.chunk.js",
-    "static/js/2.424c09b7.chunk.js.map": "/mikepreis/7buttoncalculator/static/js/2.424c09b7.chunk.js.map",
-    "index.html": "/mikepreis/7buttoncalculator/index.html",
-    "static/css/main.c4329f8a.chunk.css.map": "/mikepreis/7buttoncalculator/static/css/main.c4329f8a.chunk.css.map",
-    "static/js/2.424c09b7.chunk.js.LICENSE.txt": "/mikepreis/7buttoncalculator/static/js/2.424c09b7.chunk.js.LICENSE.txt"
+    "main.css": "/7buttoncalculator/static/css/main.c4329f8a.chunk.css",
+    "main.js": "/7buttoncalculator/static/js/main.a66d954d.chunk.js",
+    "main.js.map": "/7buttoncalculator/static/js/main.a66d954d.chunk.js.map",
+    "runtime-main.js": "/7buttoncalculator/static/js/runtime-main.465f8f7b.js",
+    "runtime-main.js.map": "/7buttoncalculator/static/js/runtime-main.465f8f7b.js.map",
+    "static/js/2.082a96d9.chunk.js": "/7buttoncalculator/static/js/2.082a96d9.chunk.js",
+    "static/js/2.082a96d9.chunk.js.map": "/7buttoncalculator/static/js/2.082a96d9.chunk.js.map",
+    "index.html": "/7buttoncalculator/index.html",
+    "static/css/main.c4329f8a.chunk.css.map": "/7buttoncalculator/static/css/main.c4329f8a.chunk.css.map",
+    "static/js/2.082a96d9.chunk.js.LICENSE.txt": "/7buttoncalculator/static/js/2.082a96d9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.13f8788b.js",
-    "static/js/2.424c09b7.chunk.js",
+    "static/js/runtime-main.465f8f7b.js",
+    "static/js/2.082a96d9.chunk.js",
     "static/css/main.c4329f8a.chunk.css",
     "static/js/main.a66d954d.chunk.js"
   ]
