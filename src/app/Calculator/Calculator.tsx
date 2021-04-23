@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Header from '../Header/Header'
 import Display from '../Display/Display'
 import Pad from '../KeyPad/KeyPad'
-import { Digit, Operator } from '../../lib/types'
+import { Digit, Operator} from '../../lib/types'
 
 
 const StyledApp = styled.div`
@@ -23,7 +23,7 @@ export const Calculator: FunctionComponent = () => {
 
   const calculate = (rightOperand: number, pendingOperator: Operator): boolean => {
     let newResult = result
-
+    
     switch (pendingOperator) {
       case '+':
         newResult += rightOperand
@@ -42,9 +42,20 @@ export const Calculator: FunctionComponent = () => {
         newResult /= rightOperand
     }
 
+    // need to save newResult to a different variable because 
+    // we are using toString() to check for the number of digits in the number
+    // if the digits in the answer are greater than 10 then turn the answer into an exponential
+    let numberOfDigits = newResult.toString().length
+    let answer = ""
+
+    if (numberOfDigits > 10)
+       answer = newResult.toExponential(4)
+    else
+      answer = newResult.toString()
 
     setResult(newResult)
-    setDisplay(newResult.toString().toString().slice(0, 20))
+    setDisplay(answer)
+    // setDisplay(newResult.toString().toString().slice(0, 20))
 
     return true
   }
@@ -54,7 +65,7 @@ export const Calculator: FunctionComponent = () => {
     let newDisplay = display
  
 
-    if ((display === '0' && digit === 0) || display.length > 20) {
+    if ((display === '0' && digit === 0) || display.length > 15) {
       return
     }
     
@@ -70,7 +81,6 @@ export const Calculator: FunctionComponent = () => {
       newDisplay = digit.toString()
     }
 
-    
     setDisplay(newDisplay)
   }
 
@@ -168,6 +178,28 @@ export const Calculator: FunctionComponent = () => {
     console.log("onSecondButton Fired");
   }
 
+  const onPIButtonClick = (number : Number) => {
+    let newDisplay = display
+
+    if (waitingForOperand) {
+      newDisplay = number.toString()
+    }
+
+    setDisplay(newDisplay)
+    setWaitingForOperand(false)
+  }
+
+  const onInfinityButtonClick = (number : Number) => {
+    let newDisplay = display
+
+    if (waitingForOperand) {
+      newDisplay = number.toString()
+    }
+
+    setDisplay(newDisplay)
+    setWaitingForOperand(false)
+  }
+
   return (
     <StyledApp>
       <Header/>
@@ -185,6 +217,8 @@ export const Calculator: FunctionComponent = () => {
         onMemoryPlusButtonClick={onMemoryPlusButtonClick}
         onMemoryMinusButtonClick={onMemoryMinusButtonClick}
         onSecondButtonClick={onSecondButtonClick}
+        onPIButtonClick={onPIButtonClick}
+        onInfinityButtonClick={onInfinityButtonClick}
       />
     </StyledApp>
   )

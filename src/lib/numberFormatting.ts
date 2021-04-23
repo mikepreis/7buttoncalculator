@@ -5,7 +5,6 @@ let insertCommas = function(valueString : string) {
     if (valueString.indexOf("-") === 0)
         indexOfFirstValueInString = 1;
 
-
     for (let stringIndex = valueString.length - 3; stringIndex > indexOfFirstValueInString; stringIndex -= 3)
         valueString = valueString.slice(0, stringIndex) + "," + valueString.slice(stringIndex, valueString.length);
 
@@ -17,6 +16,9 @@ export function insertCommasIntoValueString(valueString : string) {
 
     let e = valueString.indexOf("e");
     let dot = valueString.indexOf(".");
+
+    if (valueString == "Infinity")
+        return valueString        
 
     if (e === -1 && dot === -1)
         valueString = insertCommas(valueString);

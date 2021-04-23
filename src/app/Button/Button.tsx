@@ -92,8 +92,6 @@ export const StyledButton = styled.button<ButtonProps>`
 `
 
 export const Button: FunctionComponent<ButtonProps> = ({ children, color, isLarge, onClick}) => {
-  
-
 
   return (
     <StyledButton color={color} isLarge={isLarge} onClick={onClick}>

@@ -17,6 +17,8 @@ interface PadProps {
   onMemoryPlusButtonClick: () => void
   onMemoryMinusButtonClick: () => void
   onSecondButtonClick: () => void
+  onPIButtonClick: (number : Number) => void
+  onInfinityButtonClick: (number : Number) => void
 }
 
 const StyledPad = styled.div`
@@ -38,7 +40,9 @@ export const KeyPad: FunctionComponent<PadProps> = ({
   onMemoryClearButtonClick,
   onMemoryPlusButtonClick,
   onMemoryMinusButtonClick,
-  onSecondButtonClick
+  onSecondButtonClick,
+  onPIButtonClick, 
+  onInfinityButtonClick
 }) => {
   const handleKeyDown = ({ keyCode, shiftKey }: KeyboardEvent) => {
     console.log(keyCode)
@@ -90,8 +94,8 @@ export const KeyPad: FunctionComponent<PadProps> = ({
       <Button color="white">
 
       </Button>
-      <Button color="white">
-   
+      <Button onClick={() => onPIButtonClick(3.1416)}>
+        &Pi;
       </Button>
       <Button  onClick={onAllClearButtonClick}>
         CLR ALL
@@ -198,8 +202,8 @@ export const KeyPad: FunctionComponent<PadProps> = ({
       <Button onClick={onPointButtonClick}>
         .
       </Button>
-      <Button color="light-blue">
-        INF
+      <Button onClick={() => onInfinityButtonClick(Infinity)}>
+        &infin;
       </Button>
       <Button color="dark-blue" onClick={onEqualButtonClick}>
         =
